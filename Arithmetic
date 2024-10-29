@@ -1,4 +1,6 @@
-//C++ Arithmetic 
+//C++ Arithmetic
+//Matthew A. Alegre
+//ACT-1A
 #include <iostream>
 #include <string>
 #include <iomanip> // For formatting output
