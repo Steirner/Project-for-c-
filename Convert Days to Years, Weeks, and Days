@@ -1,4 +1,6 @@
 //Convert Days to Years, Weeks, and Days
+//Matthew A. Alegre
+//ACT-1A
 #include <iostream>
 #include <string>
 #include <iomanip> // For formatting output
