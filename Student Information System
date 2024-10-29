@@ -1,4 +1,6 @@
 //Student Information System
+// Matthew A. Alegre
+// Act-1A
 #include <iostream>
 #include <string>
 #include <iomanip> // For formatting output
