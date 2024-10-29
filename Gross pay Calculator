@@ -1,4 +1,8 @@
-// Gross pay Calculator 
+//MovieTicketingSystem
+//Matthew A. Alegre
+//ACT-1A
+
+// Gross pay Calculator
 
 #include <iostream>
 #include <iomanip> // For formatting output
@@ -6,7 +10,7 @@
 using namespace std;
 
 int main() {
-  float hoursWorked; lol
+  float hoursWorked;
   float payRate;
   float grossPay;
 
@@ -29,3 +33,4 @@ int main() {
 
   return 0;
 }
+
