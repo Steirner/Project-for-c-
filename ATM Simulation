@@ -1,0 +1,112 @@
+//ATM Simulation
+//Matthew A. Alegre
+//ACT_1A
+
+#include <iostream>
+#include <limits>
+
+using namespace std;
+
+class ATM {
+private:
+    double balance;
+
+public:
+    ATM() : balance(500.00) {} // Initial balance set to 500.00
+
+    void displayMenu() {
+        cout << "ATM Menu" << endl;
+        cout << "[1] Withdraw" << endl;
+        cout << "[2] Deposit" << endl;
+        cout << "[3] Check Balance" << endl;
+        cout << "[4] Exit" << endl;
+    }
+
+    void withdraw() {
+        double amount;
+        cout << "Enter the amount to withdraw: ";
+        cin >> amount;
+
+        if (amount > balance) {
+            cout << "Insufficient Balance! Current Balance is: PHP " << balance << endl;
+        } else {
+            balance -= amount;
+            cout << "Withdrawal Successful!" << endl;
+        }
+    }
+
+    void deposit() {
+        double amount;
+        cout << "Enter the amount to deposit: PHP ";
+        cin >> amount;
+
+        balance += amount;
+        cout << "Deposit Successful. New Balance is: PHP " << balance << endl;
+    }
+
+    void checkBalance() {
+        cout << "Current Balance: PHP " << balance << endl;
+    }
+
+    void exitATM() {
+        char choice;
+        cout << "Are you sure you want to exit? (Y/N): ";
+        cin >> choice;
+
+        if (choice == 'Y' || choice == 'y') {
+            cout << "Thank you for using the ATM. Goodbye!" << endl;
+            exit(0);
+        }
+    }
+};
+
+int main() {
+    ATM atm;
+    const int correctPIN = 1234;
+    int attempts = 0;
+    int userPIN;
+
+    while (attempts < 3) {
+        cout << "Welcome to Langbank!" << endl;
+        cout << "Enter your ATM PIN: ";
+        cin >> userPIN;
+
+        if (userPIN == correctPIN) {
+            break;
+        } else {
+            attempts++;
+            cout << "Incorrect PIN. You have " << (3 - attempts) << " attempts left." << endl;
+        }
+    }
+
+    if (attempts == 3) {
+        cout << "Too many incorrect attempts. Exiting..." << endl;
+        return 0;
+    }
+
+    while (true) {
+        atm.displayMenu();
+        int option;
+        cout << "Choose Option: ";
+        cin >> option;
+
+        switch (option) {
+            case 1:
+                atm.withdraw();
+                break;
+            case 2:
+                atm.deposit();
+                break;
+            case 3:
+                atm.checkBalance();
+                break;
+            case 4:
+                atm.exitATM();
+                break;
+            default:
+                cout << "Invalid option. Please try again." << endl;
+        }
+    }
+
+    return 0;
+}
